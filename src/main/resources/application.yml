@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: SonarQubeSupport
+  main:
+    web-application-type: reactive
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration
+app:
+  token: <your-user-token>
+  api:
+    host-name: http://sonarqube-server:9000
+    search:
+      page-size: 50
+      qualifier: TRK
+      organization: default-organization
+      name-or-key: _MR
+      minus-days: 5
+logging:
+  level:
+    org.harvanir.sonarqube: debug
+#    reactor.netty.http.client: debug
